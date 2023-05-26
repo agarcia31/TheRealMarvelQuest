@@ -6,41 +6,59 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/dist/output.css">
-  <title>MarvelQuest</title>
+  <title>Marvel Quest</title>
 </head>
 
 <body>
+  <!-- Header section with the search bar -->
   <h1 class="bg-red-950 text-white text-center bg-cover bg-center py-8">
-    <div class="w-full h-96 bg-cover bg-center" style="background-image: url('./assets/images/banner.jpg')" alt="Picture of Spiderman, Wolverine, Daredevil, The Punisher, Deadpool and The Hulk inside the negative space of the word Marvel"></div>
-    <span class="relative z-10">Marvel Quest</span>
+    <!-- Banner image -->
+    <div class="w-full h-96 bg-cover bg-center"
+      style="background-image: url('./assets/images/banner.jpg'); background-size: contain;"></div>
+    <span class="relative z-10">
+      <!-- Search bar -->
+      <input type="text" id="searchBar" placeholder="Search Super Heroes">
+      <!-- Search button -->
+      <button class="bg-blue-500 hover:bg-blue-900 text-white font-bold py-1 px-4 rounded" onclick="search()">
+        Search
+      </button>
+    </span>
   </h1>
+
+  <!-- Main content section -->
   <div class="container mx-auto py-8">
     <div class="grid grid-cols-3 gap-6">
+      <!-- Captain America -->
       <div>
         <a href="./superheros/captainamerica.html">
-          <img class="w-full h-auto object-cover" src="./assets/images/Cap.jpg" alt="Captain America" />
+          <img class="w-full h-auto object-cover" src="./assets/images/CaptainAmerica.jpg" alt="Captain America" />
         </a>
       </div>
+      <!-- Iron Man -->
       <div>
         <a href="./superheros/ironman.html">
           <img class="w-full h-auto object-cover" src="./assets/images/Ironman.jpg" alt="Iron Man" />
         </a>
       </div>
+      <!-- The Hulk -->
       <div>
         <a href="./superheros/hulk.html">
           <img class="w-full h-auto object-cover" src="./assets/images/Hulk.jpg" alt="The Hulk" />
         </a>
       </div>
+      <!-- Thor -->
       <div>
         <a href="./superheros/thor.html">
           <img class="w-full h-auto object-cover" src="./assets/images/Thor.jpg" alt="Thor" />
         </a>
       </div>
+      <!-- Black Widow -->
       <div>
         <a href="./superheros/blackwidow.html">
           <img class="w-full h-auto object-cover" src="./assets/images/Blackwidow.jpg" alt="Black Widow" />
         </a>
       </div>
+      <!-- Hawkeye -->
       <div>
         <a href="./superheros/hawkeye.html">
           <img class="w-full h-auto object-cover" src="./assets/images/hawkeye.jpg" alt="Hawkeye" />
