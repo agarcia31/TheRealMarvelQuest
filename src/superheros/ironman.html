@@ -8,22 +8,30 @@
 </head>
 <body class="bg-gray-100">
   <div class="container mx-auto p-6">
-    <h1 class="text-4xl font-bold mb-6">Iron Man</h1>
-
+    <h1 class="bg-red-600 font-bold text-center" style="font-size: 50px; color: gold;">Iron Man</h1>
     <div class="flex flex-col md:flex-row gap-8">
       <div class="max-w-xs">
         <img id="ironman_image" class="mb-4" />
-        <p id="ironman_bio" class="text-gray-700"></p>
+        <p id="ironman_bio" class="text-gray-700 text-base"></p>
       </div>
-
       <div class="max-w-md">
-        <div id="comics" class="mb-6 grid grid-cols-5 gap-4"></div>
-        <div id="movies" class="mb-6"></div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2" >Comics</h2>
+          <div id="comics" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Movies</h2>
+          <div id="movies" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
         <div id="comic_image"></div>
       </div>
+      
     </div>
   </div>
 
   <script src="../assets/js/ironman.js"></script>
 </body>
 </html>
+
+
+
