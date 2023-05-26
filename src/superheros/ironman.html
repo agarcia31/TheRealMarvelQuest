@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link src="/dist/output.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Almarai:wght@300&family=Archivo+Black&family=Poppins:wght@700&family=Press+Start+2P&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>Iron Man</title>
-  </head>
-  <body id="ironmanbody">
-    <h1>Iron Man</h1>
-    <div id="bio">
-      <img id="ironman_image" />
-      <p id="ironman_bio"></p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <title>Iron Man</title>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-6">
+    <h1 class="text-4xl font-bold mb-6">Iron Man</h1>
+
+    <div class="flex flex-col md:flex-row gap-8">
+      <div class="max-w-xs">
+        <img id="ironman_image" class="mb-4" />
+        <p id="ironman_bio" class="text-gray-700"></p>
+      </div>
+
+      <div class="max-w-md">
+        <div id="comics" class="mb-6 grid grid-cols-5 gap-4"></div>
+        <div id="movies" class="mb-6"></div>
+        <div id="comic_image"></div>
+      </div>
     </div>
-    <div id="comics"></div>
-    <div id="movies"></div>
-    <div id="comic_image">
-      <h2 id="comic_title"></h2>
-    </div>
-  </body>
-  <div></div>
-  <script src="./assets/js/ironman.js"></script>
-  <script src="./assets/js/ironmanmovie.js"></script>
+  </div>
+
+  <script src="../assets/js/ironman.js"></script>
+</body>
 </html>
