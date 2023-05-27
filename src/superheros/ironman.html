@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
   <title>Iron Man</title>
 </head>
+
 <body class="bg-gray-100">
   <div class="container mx-auto p-6">
     <h1 class="bg-red-600 font-bold text-center" style="font-size: 50px; color: gold;">Iron Man</h1>
@@ -16,21 +18,40 @@
       </div>
       <div class="max-w-md">
         <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2" >Comics</h2>
+          <h2 class="text-2xl font-bold mb-2">Comics</h2>
           <div id="comics" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
         </div>
         <div class="mb-8">
           <h2 class="text-2xl font-bold mb-2">Movies</h2>
           <div id="movies" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
         </div>
-        <div id="comic_image"></div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Series</h2>
+          <div id="series" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Events</h2>
+          <div id="events" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Stories</h2>
+          <div id="stories" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Characters by Series</h2>
+          <div id="characters_by_series" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
+        <div class="mb-8">
+          <h2 class="text-2xl font-bold mb-2">Characters by Comic</h2>
+          <div id="characters_by_comic" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
+        </div>
       </div>
-      
     </div>
   </div>
 
   <script src="../assets/js/ironman.js"></script>
 </body>
+
 </html>
 
 
