@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results</title>
+  <link rel="stylesheet" href="/dist/output.css">
+  <style>
+    /* Additional styling for search results page */
+    .character-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .character-card {
+      width: 300px;
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .character-card img {
+      width: 200px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .character-card h3 {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Search results container -->
+  <div id="searchResults" class="container mx-auto py-8">
+    <div class="character-container"></div>
+  </div>
+
+  <script src="/src/assets/js/search.js"></script>
+  <script>
+    // Add event listener to execute search when the page loads
+    window.addEventListener('DOMContentLoaded', search);
+  </script>
+</body>
+
+</html>
+
