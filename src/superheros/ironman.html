@@ -5,48 +5,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@500&family=Monomaniac+One&display=swap" rel="stylesheet">
   <title>Iron Man</title>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-gradient-to-r from-red-700 to-yellow-400">
   <div class="container mx-auto p-6">
-    <h1 class="bg-red-600 font-bold text-center" style="font-size: 50px; color: gold;">Iron Man</h1>
+    <h1 class="bg-gradient-to-r from-orange-700 to-red-400 font-bold text-center border-8 border-red-600 rounded-lg py-4 px-8 text-4xl md:text-6xl text-black" style="font-family: Monomaniac One;">
+      Iron Man
+    </h1>      
     <div class="flex flex-col md:flex-row gap-8">
       <div class="max-w-xs">
-        <img id="ironman_image" class="mb-4" />
+        <img id="ironman_image" class="mb-4 w-32 h-32 sm:w-96 sm:h-96 mx-auto" src="ironman.jpg" style="width: 500px; height: 350px;" alt="Iron Man Image" />
         <p id="ironman_bio" class="text-gray-700 text-base"></p>
-      </div>
+      </div>     
       <div class="max-w-md">
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Comics</h2>
-          <div id="comics" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Movies</h2>
-          <div id="movies" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Series</h2>
-          <div id="series" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Events</h2>
-          <div id="events" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Stories</h2>
-          <div id="stories" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Characters by Series</h2>
-          <div id="characters_by_series" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-        <div class="mb-8">
-          <h2 class="text-2xl font-bold mb-2">Characters by Comic</h2>
-          <div id="characters_by_comic" class="max-h-72 overflow-y-auto grid grid-cols-5 gap-4"></div>
-        </div>
-      </div>
-    </div>
+        <div class="max-w-md">
+          <div class="flex flex-col items-center justify-center h-full mb-8 bg-gradient-to-r to-r-300 relative" style="border: 5px solid yellow; box-shadow: inset 0 0 0 5px orange;">
+            <h2 class="font-bold mb-2 text-center text-black border border-solid border-black border-6" style="font-size: 30px; font-family: Monomaniac One; padding-top: 10px;">Comics</h2>
+            <div id="comics" class="flex justify-center items-center flex-wrap gap-4 max-h-72 overflow-y-auto text-center" style="font-size: 8px; font-family: Kanit; color: black;">
+              <!-- Your comics content here -->
+            </div>
+            <style>
+              /* Custom scrollbar */
+              #comics::-webkit-scrollbar {
+                width: 5px;
+                background-color: red;
+              }
+          
+              #comics::-webkit-scrollbar-thumb {
+                background-color: yellow;
+              }
+          
+              .comic {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+          
+              .comic img {
+                margin-bottom: 5px;
+              }
+          
+              .comic p {
+                margin: 0;
+              }
+            </style>
+          </div>                       
+          <div class="flex flex-col items-center justify-center h-full mb-8 bg-gradient-to-r to-r-300 relative" style="border: 5px solid yellow; box-shadow: inset 0 0 0 5px orange;">
+            <h2 class="font-bold mb-2 text-center text-black border border-solid border-black border-6" style="font-size: 30px; font-family: Monomaniac One; padding-top: 10px;">Series</h2>
+            <div id="series" class="flex justify-center items-center flex-wrap gap-4 max-h-72 overflow-y-auto text-center" style="font-size: 8px; font-family: Kanit; color: black;">
+              <!-- Your series content here -->
+            </div>
+            <style>
+              /* Custom scrollbar */
+              #series::-webkit-scrollbar {
+                width: 5px;
+                background-color: red;
+              }
+          
+              #series::-webkit-scrollbar-thumb {
+                background-color: yellow;
+              }
+          
+              .series {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+          
+              .series img {
+                margin-bottom: 5px;
+              }
+          
+              .series p {
+                margin: 0;
+              }
+            </style>
+          </div>  
+          <div class="flex flex-col items-center justify-center h-full mb-8 bg-gradient-to-r to-r-300 relative" style="border: 5px solid yellow; box-shadow: inset 0 0 0 5px orange;">
+            <h2 class="font-bold mb-2 text-center text-black border border-solid border-black border-6" style="font-size: 30px; font-family: Monomaniac One; padding-top: 10px;">Events</h2>
+            <div id="events" class="flex justify-center items-center flex-wrap gap-4 max-h-72 overflow-y-auto text-center" style="font-size: 8px; font-family: Kanit; color: black;">
+              <!-- Your events content here -->
+            </div>
+            <style>
+              /* Custom scrollbar */
+              #events::-webkit-scrollbar {
+                width: 5px;
+                background-color: red;
+              }
+          
+              #events::-webkit-scrollbar-thumb {
+                background-color: yellow;
+              }
+          
+              .event {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+          
+              .event img {
+                margin-bottom: 5px;
+              }
+          
+              .event p {
+                margin: 0;
+              }
+            </style>
+          </div>  
+          <div class="flex flex-col items-center justify-center h-full mb-8 bg-gradient-to-r to-r-300 relative" style="border: 5px solid yellow; box-shadow: inset 0 0 0 5px orange;">
+            <h2 class="font-bold mb-2 text-center text-black border border-solid border-black border-6" style="font-size: 30px; font-family: Monomaniac One; padding-top: 10px;">Stories</h2>
+            <div id="stories" class="flex justify-center items-center flex-wrap gap-4 max-h-72 overflow-y-auto text-center" style="font-size: 8px; font-family: Kanit; color: black;">
+              <!-- Your stories content here -->
+            </div>
+            <style>
+              /* Custom scrollbar */
+              #stories::-webkit-scrollbar {
+                width: 5px;
+                background-color: red;
+              }
+          
+              #stories::-webkit-scrollbar-thumb {
+                background-color: yellow;
+              }
+          
+              .story {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+          
+              .story img {
+                margin-bottom: 5px;
+              }
+          
+              .story p {
+                margin: 0;
+              }
+            </style>
+          </div>  
+          <div class="flex flex-col items-center justify-center h-full mb-8 bg-gradient-to-r to-r-300 relative" style="border: 5px solid yellow; box-shadow: inset 0 0 0 5px orange;">
+            <h2 class="font-bold mb-2 text-center text-black border border-solid border-black border-6" style="font-size: 30px; font-family: Monomaniac One; padding-top: 10px;">Worked With</h2>
+            <div id="workedWith" class="flex justify-center items-center flex-wrap gap-4 max-h-72 overflow-y-auto text-center scrollbar-thin scrollbar-thumb-yellow scrollbar-track-red" style="font-size: 8px; font-family: Kanit; color: black;">
+              <!-- Your worked with content here -->
+            </div>
+            <style>        
+              .CharactersByComic {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+              }
+          
+              .CharactersByComic img {
+                margin-bottom: 5px;
+              }
+          
+              .CharactersByComic p {
+                margin: 0;
+              }
+            </style>
+          </div>
+          
   </div>
 
   <script src="../assets/js/ironman.js"></script>

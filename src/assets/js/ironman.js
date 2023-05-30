@@ -5,7 +5,6 @@ const characterName = 'Iron Man';
 
 const bio = document.getElementById('ironman_bio');
 const comics = document.getElementById('comics');
-const movies = document.getElementById('movies');
 const ironman_image = document.getElementById('ironman_image');
 const comic_image = document.getElementById('comic_image');
 
@@ -33,16 +32,16 @@ function fetchIronManData() {
       console.error('Error fetching Iron Man comics:', error);
     });
 
-  fetch(
-    `https://gateway.marvel.com/v1/public/characters/1009368/series?ts=${ts}&apikey=${apiKey}&hash=${hash}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      renderSeries(data.data.results);
-    })
-    .catch((error) => {
-      console.error('Error fetching Iron Man series:', error);
-    });
+    fetch(
+      `https://gateway.marvel.com/v1/public/characters/1009368/series?ts=${ts}&apikey=${apiKey}&hash=${hash}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        renderSeries(data.data.results);
+      })
+      .catch((error) => {
+        console.error('Error fetching Iron Man series:', error);
+      });
 
   fetch(
     `https://gateway.marvel.com/v1/public/characters/1009368/events?ts=${ts}&apikey=${apiKey}&hash=${hash}`
@@ -55,25 +54,16 @@ function fetchIronManData() {
       console.error('Error fetching Iron Man events:', error);
     });
 
-  fetch(
-    `https://gateway.marvel.com/v1/public/characters/1009368/stories?ts=${ts}&apikey=${apiKey}&hash=${hash}`
-  )
-    .then((response) => response.json())
-    .then((data) => {
-      renderStories(data.data.results);
-    })
-    .catch((error) => {
-      console.error('Error fetching Iron Man stories:', error);
-    });
-    fetch('http://localhost:3000/api/marvel/characters/1009368/movies?ts=HelloWorld123&apikey=58cf9dccb6a433565258dd4185258cc5&hash=6a3f4d8c242a80ba92ccd1d638bc7c4f')
-    .then((response) => response.json())
-    .then((data) => {
-      // Process the movie data
-    })
-    .catch((error) => {
-      console.error('Error fetching movies:', error);
-    });
-
+    fetch(
+      `https://gateway.marvel.com/v1/public/characters/1009368/stories?ts=${ts}&apikey=${apiKey}&hash=${hash}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        renderStories(data.data.results);
+      })
+      .catch((error) => {
+        console.error('Error fetching Iron Man stories:', error);
+      });
   fetch(
     `https://gateway.marvel.com/v1/public/characters/1009368/series?ts=${ts}&apikey=${apiKey}&hash=${hash}`)
     .then((response) => response.json())
@@ -109,6 +99,7 @@ function renderHeroImage(thumbnail) {
   heroImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
 }
 
+
 function renderHeroBio(description) {
   const heroBio = document.getElementById('ironman_bio');
   heroBio.textContent = description;
@@ -130,16 +121,22 @@ function createComicElement(comic) {
   const thumbnail = comic.thumbnail;
   const comicImage = document.createElement('img');
   comicImage.className = 'mb-4';
-  comicImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
+  comicImage.src = `${thumbnail.path}/portrait_uncanny.${thumbnail.extension}`;
+
+  // Add custom sizing to the comic image
+  comicImage.style.width = '150px';
+  comicImage.style.height = '200px';
+
   comicElement.appendChild(comicImage);
 
   const comicTitle = document.createElement('p');
-  comicTitle.className = 'text-gray-700 text-base';
+  comicTitle.className = '';
   comicTitle.textContent = comic.title;
   comicElement.appendChild(comicTitle);
 
   return comicElement;
 }
+
 
 function renderSeries(series) {
   const seriesContainer = document.getElementById('series');
@@ -157,11 +154,11 @@ function createSerieElement(serie) {
   const thumbnail = serie.thumbnail;
   const serieImage = document.createElement('img');
   serieImage.className = 'mb-4';
-  serieImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
+  serieImage.src = `${thumbnail.path}/portrait_large.${thumbnail.extension}`;
   serieElement.appendChild(serieImage);
 
   const serieTitle = document.createElement('p');
-  serieTitle.className = 'text-gray-700 text-base';
+  serieTitle.className = '';
   serieTitle.textContent = serie.title;
   serieElement.appendChild(serieTitle);
 
@@ -184,11 +181,11 @@ function createEventElement(event) {
   const thumbnail = event.thumbnail;
   const eventImage = document.createElement('img');
   eventImage.className = 'mb-4';
-  eventImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
+  eventImage.src = `${thumbnail.path}/portrait_large.${thumbnail.extension}`;
   eventElement.appendChild(eventImage);
 
   const eventTitle = document.createElement('p');
-  eventTitle.className = 'text-gray-700 text-base';
+  eventTitle.className = '';
   eventTitle.textContent = event.title;
   eventElement.appendChild(eventTitle);
 
@@ -198,32 +195,36 @@ function createEventElement(event) {
 function renderStories(stories) {
   const storiesContainer = document.getElementById('stories');
 
-  stories.forEach((story) => {
-    const storyElement = createStoryElement(story);
-    storiesContainer.appendChild(storyElement);
-  });
+  if (stories && stories.length > 0) {
+    stories.forEach((story) => {
+      const storyElement = createStoryElement(story);
+      storiesContainer.appendChild(storyElement);
+    });
+  } else {
+    const noStoriesMessage = document.createElement('p');
+    noStoriesMessage.textContent = 'No stories available.';
+    storiesContainer.appendChild(noStoriesMessage);
+  }
 }
-
 function createStoryElement(story) {
   const storyElement = document.createElement('div');
   storyElement.className = 'story';
 
   const thumbnail = story.thumbnail;
-  if (thumbnail) {
+  if (thumbnail && thumbnail.path && thumbnail.extension) {
     const storyImage = document.createElement('img');
     storyImage.className = 'mb-4';
-    storyImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
+    storyImage.src = `${thumbnail.path}/portrait_large.${thumbnail.extension}`;
     storyElement.appendChild(storyImage);
   }
 
   const storyTitle = document.createElement('p');
-  storyTitle.className = 'text-gray-700 text-base';
+  storyTitle.className = '';
   storyTitle.textContent = story.title;
   storyElement.appendChild(storyTitle);
 
   return storyElement;
 }
-
 function fetchCharactersBySeries(seriesId) {
   fetch(
     `https://gateway.marvel.com/v1/public/series/${seriesId}/characters?ts=${ts}&apikey=${apiKey}&hash=${hash}`
@@ -268,6 +269,7 @@ function renderCharactersByComic(characters) {
   });
 }
 
+
 function createCharacterElement(character) {
   const characterElement = document.createElement('div');
   characterElement.className = 'character';
@@ -275,11 +277,11 @@ function createCharacterElement(character) {
   const thumbnail = character.thumbnail;
   const characterImage = document.createElement('img');
   characterImage.className = 'mb-4';
-  characterImage.src = `${thumbnail.path}/portrait_xlarge.${thumbnail.extension}`;
+  characterImage.src = `${thumbnail.path}/portrait_large.${thumbnail.extension}`;
   characterElement.appendChild(characterImage);
 
   const characterName = document.createElement('p');
-  characterName.className = 'text-gray-700 text-base';
+  characterName.className = '';
   characterName.textContent = character.name;
   characterElement.appendChild(characterName);
 
